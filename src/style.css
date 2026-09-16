@@ -86,7 +86,7 @@ body{
     height: 100vh;
     font-family: var(--text-font-family);
     color: var(--text-color);
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.08rem;
 
     display: grid;
     grid-template-rows: 1fr 10fr 1fr;
@@ -141,7 +141,8 @@ nav ul{
 /* header */
 
 /* main content */
-#main-content{
+/* homepage */
+#home #main-content{
     grid-area: main;
 
     display: grid;
@@ -152,7 +153,7 @@ nav ul{
     opacity: 0.9;
 }
 
-#main-content .wrapper{
+#home #main-content .wrapper{
     display: grid;
     justify-items: center;
     justify-content: center;
@@ -191,7 +192,93 @@ nav ul{
     background-color: transparent;
     color: var(--almond-cream);
 }
-/* main content */
+/* homepage */
+/* menu page */
+#menu #main-content{
+  background-color: var(--almond-cream);
+}
+
+#menu #main-content .wrapper{
+  padding-top: var(--spacing);
+}
+
+#beverages,
+#desserts{
+  display: grid;
+  align-items: center;
+  gap: 3rem;
+  grid-template-columns: repeat(3, 500px);
+}
+
+#beverages-title,
+#desserts-title{
+  position: relative;
+  font-size: 4rem;
+}
+
+
+#desserts-title{
+  margin: 3rem;
+  order: 1;
+}
+
+#beverages-title::after{
+  margin-left:  3px;
+  content: "→";
+  background-color: var(--toffee-brown);
+  color: var(--pale-oak);
+}
+
+#desserts-title::before{
+  margin-right:  3px;
+  content: "←";
+  background-color: var(--toffee-brown);
+  color: var(--pale-oak);
+}
+
+.card img{
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#card-container{
+  display: grid;
+  grid-template-rows: 1fr max-content 1fr;
+  gap: 1rem;
+}
+
+hr{
+  border-color: var(--coffee-bean);
+}
+
+#desserts .card{
+  order: -1;
+}
+
+.card{
+  display: grid;
+  justify-items: center;
+
+  padding: 1rem;
+  gap: 1.75rem;
+
+  background-color: var(--almond-cream);
+  border-radius: var(--spacing);
+  border: 3px solid var(--faded-copper);
+}
+
+#desserts .card{
+  gap: 2.75rem;
+}
+
+.card-title{
+  font-size: 1.75rem;
+}
+
+.card-price{
+  color: hsl(120, 100%, 35%);
+  font-size: 1.4rem;
+}
 
 /* footer */
 footer{

@@ -1,4 +1,6 @@
 export default function(){
+    document.body.setAttribute("id", "home") // adding id to the body to be able to style each page separately
+
     const heroTitle = document.createElement("div")
     heroTitle.setAttribute("id", "hero-title")
     heroTitle.innerHTML = "Random <br> Coffee Shop"
@@ -20,6 +22,4 @@ export default function(){
 
     const mainContent = document.querySelector("#main-content");
     mainContent.appendChild(wrapper)
-
-    
 }   

@@ -1,4 +1,5 @@
-import "./style.css";
-import initialRender from "./home.js"
+import "./style.css"
+import homePage from "./home.js"
+import menuPage from "./menu.js"
 
-initialRender()
+menuPage()
