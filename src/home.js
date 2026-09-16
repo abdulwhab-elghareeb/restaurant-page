@@ -9,7 +9,7 @@ export default function(){
     btn1.textContent = "Explore Menu"
 
     const btn2 = document.createElement("button")
-    btn2.textContent = "About Us"
+    btn2.textContent = "Contact Us"
 
     const heroBtnsContainer = document.createElement("div")
     heroBtnsContainer.setAttribute("id", "hero-btns")
