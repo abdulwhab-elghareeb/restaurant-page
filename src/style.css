@@ -213,9 +213,10 @@ nav ul{
 }
 
 /* menu page */
-
-#menu #main-content .wrapper{
-  padding-top: var(--spacing);
+#menu #main-content{
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 
 #beverages,
@@ -223,7 +224,7 @@ nav ul{
   display: grid;
   grid-template-columns: repeat(3, 500px);
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 #beverages-title,
@@ -234,7 +235,7 @@ nav ul{
 
 
 #desserts-title{
-  margin: 3rem;
+  margin-left: 4rem;
   order: 1; /* reversing card order */
 }
 
@@ -246,7 +247,7 @@ nav ul{
 }
 
 #desserts-title::before{
-  margin-right:  6px;
+  margin-right:  8px;
   content: "←";
   background-color: var(--toffee-brown);
   color: var(--pale-oak);
