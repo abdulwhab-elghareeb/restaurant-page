@@ -11,11 +11,14 @@ export default function wipeContent(){
 } 
 
 const headerHomeBtn = document.querySelector("#home-btn")
-headerHomeBtn.addEventListener("click", () =>{
+const headerTitle = document.querySelector("#header-title")
+function homeClickHandler(){
     if (document.body.id == "home") return
     wipeContent()
     homePage()
-})
+}
+headerHomeBtn.addEventListener("click", homeClickHandler)
+headerTitle.addEventListener("click", homeClickHandler)
 
 const headerMenuBtn = document.querySelector("#menu-btn")
 headerMenuBtn.addEventListener("click", () =>{
