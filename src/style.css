@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Fascinate+Inline:regular);
 @import url(https://fonts.googleapis.com/css?family=Cherry+Bomb+One:regular);
-@import url(https://fonts.googleapis.com/css?family=Commissioner:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Agbalumo:regular);
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -51,23 +51,18 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
+
 :root{
     --spacing : 1.5rem;
-    --regular-text-font-family : 'Commissioner';
+    --regular-text-font-family : 'Agbalumo';
     --headers-font-family : 'Fascinate Inline';
     --header-icon-font-family : 'Cherry Bomb One';
 
-    --almond-cream: hsl(29, 41%, 92%);
+    --almond-cream: hsl(29, 41%, 86%);
     --pale-oak: #e6ccb2ff;
-    --tan: #ddb892ff;
     --faded-copper: #b08968ff;
-    --coffee-bean: #7f5539ff;
-    --toffee-brown: #9c6644ff;
-    --text-color: hsl(0, 0%, 10%);
+    --toffee-brown: hsl(23, 39%, 42%);
+    --default-text-color: hsl(0, 0%, 15%);
 
 }
 
@@ -83,7 +78,7 @@ a{
 }
 
 a:visited{
-  color: var(--tan);
+  color: var(--almond-cream);
 }
 
 a:hover{
@@ -105,9 +100,9 @@ button:active{
 
 body{
     height: 100vh;
-    color: var(--text-color);
-    background-color: var(--almond-cream);
-    letter-spacing: 0.08rem;
+    color: var(--default-text-color);
+    background-color: var(--pale-oak);
+    letter-spacing: 0.1rem;
 
     display: grid;
     grid-template-rows: 1fr 10fr 1fr;
@@ -136,7 +131,6 @@ nav{
     padding: var(--spacing);
 
     font-family: var(--regular-text-font-family);
-    font-weight: 600;
 }
 
 #header-title{
@@ -144,14 +138,14 @@ nav{
 }
 
 nav button{
-    background-color: transparent;
-    font-size: 1.25rem;
-    padding: calc(var(--spacing) - 1rem) var(--spacing);
+  padding: calc(var(--spacing) - 1rem) var(--spacing);
+  font-size: 1.25rem;
+  background-color: transparent;
 }
 
 nav button:hover:not(#header-title){
     background-color: hsl(0 0 100 / 0.1);
-    color: var(--coffee-bean);
+    color: var(--toffee-brown);
 }
 
 nav ul{
@@ -169,7 +163,7 @@ nav ul{
 
     background-image: url(./assets/imgs/header-background.svg);
     background-size: contain;
-    opacity: 0.9;
+    opacity: 0.9; /* makes the text more readable */
 
     font-family: var(--headers-font-family);
 }
@@ -187,16 +181,19 @@ nav ul{
 
 #hero-title{
     grid-area: title;
+
     font-size: 5rem;
-    letter-spacing: inherit;
     text-align: center;
     color: var(--almond-cream);
+    letter-spacing: inherit;
 }
 
 #hero-btns{
     grid-area: buttons;
+
     display: flex;
     gap: var(--spacing);
+
     font-size: 1.25rem;
 }
 
@@ -205,9 +202,9 @@ nav ul{
     height: 52px;
 
     border-radius: var(--spacing);
-    border: 1px solid var(--coffee-bean);
+    border: 1px solid var(--toffee-brown);
     background-color: var(--pale-oak);
-    color: var(--coffee-bean);
+    color: var(--toffee-brown);
 }
 
 #hero-btns button:hover{
@@ -224,14 +221,13 @@ nav ul{
 #beverages,
 #desserts{
   display: grid;
+  grid-template-columns: repeat(3, 500px);
   align-items: center;
   gap: 3rem;
-  grid-template-columns: repeat(3, 500px);
 }
 
 #beverages-title,
 #desserts-title{
-  position: relative;
   font-size: 4rem;
   font-family: var(--headers-font-family);
 }
@@ -239,7 +235,7 @@ nav ul{
 
 #desserts-title{
   margin: 3rem;
-  order: 1;
+  order: 1; /* reversing card order */
 }
 
 #beverages-title::after{
@@ -270,11 +266,11 @@ nav ul{
 }
 
 hr{
-  border-color: var(--coffee-bean);
+  border-color: var(--toffee-brown);
 }
 
 #desserts .card{
-  order: -1;
+  order: -1; /* reversing card order */
 }
 
 .card{
@@ -284,7 +280,7 @@ hr{
   padding: 1rem;
   gap: 1.75rem;
 
-  background-color: var(--almond-cream);
+  background-color: var(--pale-oak);
   border-radius: var(--spacing);
   border: 3px solid var(--faded-copper);
 }
@@ -295,7 +291,6 @@ hr{
 
 .card-title{
   font-size: 1.75rem;
-  font-weight: 600;
 }
 
 .card-price{
@@ -388,7 +383,7 @@ form{
 }
 
 label{
-  display: block;
+  display: block; 
   margin: 0 0px 5px 5px;
 }
 
@@ -405,7 +400,7 @@ form > div:has(input[type="tel"]){
 }
 
 input{
-  width: 100%;
+  width: 100%; /* takes the full size of it's div */
   height: 3rem;
 
   border-radius: 8px;
@@ -413,9 +408,11 @@ input{
   outline: none;
 
   padding: 4px var(--spacing);
+
+  background-color: var(--almond-cream);
 }
 
-input, label{
+input{
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -424,22 +421,21 @@ form > button{
   grid-area: button;
   align-self: self-end; /* aligning it to the bottom of the card */
 
-  color: var(--coffee-bean);
+  color: var(--toffee-brown);
   background-color: var(--almond-cream);
 }
 
 form > button:hover,
-input:hover,
-label:has(input:hover){
-  color: var(--text-color);
+input:hover{
+  color: var(--default-text-color);
   background-color: var(--faded-copper);
 }
 
 input:focus{
-  background-color: var(--tan);
+  background-color: hsl(from var(--almond-cream) h s calc(l + 5));
 }
 
-::view-transition-group(root){ /* adjusting the duration of the fade animation between page */
+::view-transition-group(root){ /* adjusting the duration of the fade animation between pages */
   animation-duration: 0.5s;
 }
 
@@ -449,14 +445,16 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    
     background-color: var(--faded-copper);
-
     font-weight: 700;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 footer > a {
   margin-left: 5px;
 }
+
 footer::after{
   content: "";
 

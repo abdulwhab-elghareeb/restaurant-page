@@ -3,7 +3,7 @@ import homePage from "./home.js"
 import menuPage from "./menu.js"
 import contactPage from "./contact.js"
 
-homePage()
+homePage() // initial render
 
 export default function wipeContent(){
     document.body.removeAttribute("id")
